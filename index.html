@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sana özel 💗</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--wine:#6b1638;--rose:#c2185b;--ink:#4a1028}
+*{box-sizing:border-box;margin:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;height:100%}
+body{font-family:'Quicksand',system-ui,sans-serif;color:var(--ink);background:linear-gradient(160deg,#ffe3ec,#f7a9c4 60%,#e77aa3);background-attachment:fixed;min-height:100%;overflow-x:hidden}
+.script{font-family:'Great Vibes','Snell Roundhand',cursive;font-weight:400}
+#hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:60}
+.h{position:absolute;bottom:-40px;animation:up linear forwards;opacity:.7}
+@keyframes up{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+#lock{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;background:linear-gradient(160deg,#f9b9cf,#d94c86 70%,#8e1f52);color:#fff;transition:opacity .8s,transform .8s}
+#lock.off{opacity:0;transform:scale(1.15);pointer-events:none}
+#lock h2{font-size:1.15rem;font-weight:600}
+.dots{display:flex;gap:18px;height:16px}
+.dots i{width:14px;height:14px;border:2px solid #fff;border-radius:50%;transition:background .15s}
+.dots i.f{background:#fff}
+.dots.shake{animation:sh .45s}
+@keyframes sh{20%,60%{transform:translateX(-12px)}40%,80%{transform:translateX(12px)}}
+.pad{display:grid;grid-template-columns:repeat(3,76px);gap:16px 22px}
+.pad button{width:76px;height:76px;border-radius:50%;border:0;background:rgba(255,255,255,.22);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#fff;font:600 30px 'Quicksand',sans-serif;cursor:pointer;transition:background .15s}
+.pad button:active{background:rgba(255,255,255,.55)}
+.pad .z{grid-column:2}
+#hint{font-size:.9rem;min-height:1.2em}
+#main{position:relative;display:none}
+section{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:60px 26px;position:relative}
+.hero{position:sticky;top:0;height:100vh;height:100svh;z-index:0}
+.hero .script{font-size:clamp(3.2rem,15vw,7rem);line-height:1.05;color:var(--wine);text-shadow:0 4px 30px rgba(255,255,255,.7)}
+.hero p{margin-top:18px;font-weight:600;color:var(--rose)}
+.cue{position:absolute;bottom:30px;font-size:1.6rem;color:var(--wine);animation:bob 1.6s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(10px)}}
+.after{position:relative;z-index:2;background:linear-gradient(180deg,rgba(255,227,236,0),#ffe3ec 18%)}
+.rv{opacity:0;transform:translateY(60px) scale(.94);transition:opacity 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+h3{font-size:clamp(2.6rem,11vw,4.5rem);color:var(--wine);line-height:1.1}
+h3.big{font-size:clamp(3rem,13vw,5.5rem)}
+.lead{font-size:1.5rem;font-style:italic;color:var(--rose);margin:20px 0}
+.txt{max-width:30ch;font-size:1.15rem;line-height:1.8;margin:0 auto}
+.btn{margin-top:34px;border:0;padding:16px 38px;border-radius:99px;background:linear-gradient(135deg,#e0559a,#a3196b);color:#fff;font:700 1.1rem 'Quicksand',sans-serif;box-shadow:0 12px 30px rgba(163,25,107,.4);cursor:pointer;text-decoration:none;display:inline-block}
+.btn:active{transform:scale(.96)}
+
+/* ===== FOTOĞRAFLAR ===== */
+.gal{justify-content:flex-start;gap:0;padding-top:90px}
+.gal .sub{font-size:1.2rem;font-style:italic;color:var(--rose);margin:14px 0 40px}
+.ph{width:min(78vw,320px);margin:0 auto 54px;background:#fff;padding:12px 12px 16px;border-radius:6px;box-shadow:0 18px 40px rgba(107,22,56,.28);cursor:pointer;position:relative}
+.ph:nth-child(odd){transform:rotate(-3deg)}
+.ph:nth-child(even){transform:rotate(3deg)}
+.ph.rv{transform:translateY(70px) scale(.9) rotate(0)}
+.ph.rv.in:nth-child(odd){transform:rotate(-3deg)}
+.ph.rv.in:nth-child(even){transform:rotate(3deg)}
+.ph:before{content:"♥";position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:26px;color:#e0559a;text-shadow:0 2px 6px rgba(0,0,0,.2)}
+.ph img,.ph .no{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border-radius:3px;background:#ffe3ec}
+.ph .no{display:flex;align-items:center;justify-content:center;flex-direction:column;color:var(--rose);font-weight:600;gap:8px}
+.ph p{font:400 1.7rem 'Great Vibes',cursive;color:var(--wine);margin-top:10px;line-height:1.2}
+#lb{position:fixed;inset:0;z-index:70;background:rgba(60,8,32,.9);display:none;align-items:center;justify-content:center;flex-direction:column;padding:24px;gap:14px}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:78vh;border-radius:8px}
+#lb p{color:#fff;font:400 2rem 'Great Vibes',cursive}
+
+/* ===== ŞARKI ===== */
+.song{background:linear-gradient(160deg,#a4236a,#5c1240);color:#fff}
+.song h3{color:#fff}
+.vinyl{width:min(58vw,240px);aspect-ratio:1;border-radius:50%;margin:30px auto;background:radial-gradient(circle,#e0559a 0 17%,#1c0a14 18% 100%);box-shadow:0 20px 60px rgba(0,0,0,.45);animation:spin 7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.song .n{font-size:1.4rem;font-weight:700}
+.lyr{margin:24px auto 0;max-width:30ch;font:400 1.9rem/1.5 'Great Vibes',cursive;white-space:pre-line;opacity:.95}
+
+.env{width:min(82vw,340px);cursor:pointer;margin:26px auto 0}
+.env .fl{font-size:5rem;filter:drop-shadow(0 10px 20px rgba(107,22,56,.35));transition:transform .5s}
+.env.open .fl{transform:scale(.6)}
+.letter{max-height:0;overflow:hidden;opacity:0;transition:max-height 1.6s ease,opacity 1s;background:#fffaf7;border-radius:18px;box-shadow:0 20px 50px rgba(107,22,56,.3);text-align:left}
+.letter.show{max-height:1400px;opacity:1;margin-top:14px}
+.letter div{padding:28px 24px;line-height:2;font-size:1.05rem}
+.letter b{display:block;font:400 2.2rem 'Great Vibes',cursive;color:var(--rose);margin-bottom:8px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div id="hearts"></div>
+<div id="lock">
+  <div style="font-size:2.4rem">💗</div>
+  <h2>Şifreyi gir</h2>
+  <div class="dots" id="dots"><i></i><i></i><i></i><i></i></div>
+  <div class="pad" id="pad"></div>
+  <div id="hint"></div>
+</div>
+<div id="lb" onclick="this.classList.remove('on')"><img id="lbi" alt=""><p id="lbc"></p></div>
+
+<main id="main">
+  <section class="hero" id="hero">
+    <div class="script" id="heroTxt">SENİ ÇOK SEVİYORUM<br>SEVGİLİM</div>
+    <p>aşağı kaydır ♡</p>
+    <div class="cue">⌄</div>
+  </section>
+  <div class="after">
+    <section id="s2"><div class="rv">
+      <h3 class="script">Hoş Geldin,<br>Canım…</h3>
+      <p class="lead">Senin için özel bir dünya hazırlamak istedim.</p>
+      <p class="txt">Hislerimi, düşüncelerimi, sana olan sevgimi bu satırlara gizledim. Çünkü senin mutluluğun benim en büyük huzurum.</p>
+      <button class="btn" onclick="document.getElementById('s3').scrollIntoView()">İçimdeki Duygular Burada ♥</button>
+    </div></section>
+
+    <section id="s3"><div class="rv">
+      <h3 class="script">Bu yolculukta<br>seninle olmak</h3>
+      <p class="txt" style="margin-top:22px">Her Günü özel kılıyor. Bugünümüz, yarınımız ve geleceğimiz seninle parlak.</p>
+    </div></section>
+
+    <!-- FOTOĞRAF BÖLÜMÜ: fotoğrafları script içindeki PHOTOS listesinden ayarla -->
+    <section class="gal" id="gal">
+      <div class="rv">
+        <h3 class="script">Anılarımız</h3>
+        <p class="sub">Her karede bir hikâye, her hikâyede sen…</p>
+      </div>
+      <div id="photos"></div>
+    </section>
+
+    <section class="song" id="s4"><div class="rv">
+      <h3 class="script">Bizim Şarkımız</h3>
+      <div class="vinyl"></div>
+      <div class="n">Ebru Gündeş - Beyaz</div>
+      <div class="lyr" id="lyr"></div>
+      <button class="btn" id="play" style="display:none">▶ Çal</button>
+      <a class="btn" id="link" style="display:none" target="_blank" rel="noopener">Şarkımızı dinle 🎧</a>
+      <audio id="aud" preload="auto" loop></audio>
+    </div></section>
+
+    <section id="s5"><div class="rv">
+      <h3 class="script">Sana bir mektubum var</h3>
+      <div class="env" id="env" onclick="openLetter()">
+        <div class="fl">💌</div>
+        <p style="font-weight:600;color:var(--rose)" id="tap">açmak için dokun</p>
+        <div class="letter" id="letter"><div>
+          <b>Canım sevgilim,</b>
+          Biriciğim, canımın ta içi,
+          Sana bu satırları yazarken, kalbimde tarif etmesi imkânsız ama bir o kadar da muazzam bir his var. Hayatıma dokunduğun o ilk andan beri dünyamın tüm renkleri değişti. Önceleri sıradan gelen her detay, seninle birlikte yepyeni bir anlam kazandı; hayat senin ışığınla aydınlandı.Gözlerine her baktığımda, kendimi dünyanın en huzurlu yerinde, ait olduğum yerde hissediyorum. Gülüşün, içimde umut çiçekleri açtırıyor; bana her seferinde nefes aldığımı, yaşadığımı ve en önemlisi böylesine büyük bir aşkı tatmanın ne kadar eşsiz bir duygu olduğunu hatırlatıyor. Seninle geçen her saniye, zihnime kazımak istediğim bir sanat eseri sanki. Birlikte paylaştığımız sessizlikler, sadece ikimizin anladığı bakışmalar, ellerimizin birbirine kenetlendiği o kısacık anlar... Hepsi bana hayattaki en büyük şansımın sen olduğunu haykırıyor.Önümüzde yaşanacak nice günler, kurulacak nice güzel hayaller var. Hayat karşımıza ne çıkarırsa çıkarsın, o yolları seninle el ele, omuz omuza yürümek tek dileğim. Sen benim sadece sevgilim değil; en güvenli limanım, sırdaşım, ruhumun diğer yarısısın. Varlığın, bu hayatta başıma gelen en kusursuz mucize.Seni kelimelerin anlatabileceğinden çok daha derin, kalbimin taşıyabileceğinden çok daha büyük bir tutkuyla<br><br>
+          Seni çok ama çok seviyorum.<br>Bugün, yarın ve her zaman…
+        </div></div>
+      </div>
+    </div></section>
+
+    <section style="min-height:70vh"><div class="rv">
+      <h3 class="big script">Sonsuza dek<br>yanındayım</h3>
+      <p class="lead">Seni seviyorum 💗</p>
+    </div></section>
+  </div>
+</main>
+
+<script>
+/* ============ BURAYI DÜZENLE ============ */
+var PASS = '1207';                       // 4 haneli şifre
+
+// FOTOĞRAFLAR: dosyaları index.html ile AYNI klasöre koy.
+// Adları tam böyle olmalı: foto1.jpg ... foto7.jpg (başka isim istersen buradan değiştir)
+var PHOTOS = [
+  {src:'foto1.jpg', cap:'İlk günümüz'},
+  {src:'foto3.jpg', cap:'Kahkahalarımız'},
+  {src:'foto2.jpg', cap:'Favori anımız'},
+  {src:'foto4.jpg', cap:'Sen ve ben'},
+  {src:'foto5.jpg', cap:'Bir tanem'},
+  {src:'foto6.jpg', cap:'Güzel günler'},
+  {src:'foto7.jpg', cap:'Hep yanında'}
+];
+
+// ŞARKI: sözleri aşağıdaki iki ters tırnağın (`) arasına KENDİN yapıştır, her satır alt alta olsun
+var SONG_LYRICS = `
+`;
+var SONG_FILE = 'sarki.mp3';   // ses dosyan varsa örn: 'sarki.mp3' (aynı klasöre koy), yoksa boş bırak
+var SONG_LINK = '';   // istersen Spotify/YouTube linki: 'https://...', yoksa boş bırak
+/* ======================================== */
+
+var code='';
+var dots=document.querySelectorAll('#dots i'),pad=document.getElementById('pad');
+['1','2','3','4','5','6','7','8','9','','0','⌫'].forEach(function(k){
+  if(k===''){pad.appendChild(document.createElement('span'));return}
+  var b=document.createElement('button');b.textContent=k;if(k==='0')b.className='z';
+  b.onclick=function(){press(k)};pad.appendChild(b);
+});
+function paint(){dots.forEach(function(d,i){d.className=i<code.length?'f':''})}
+function press(k){
+  if(k==='⌫'){code=code.slice(0,-1);paint();return}
+  if(code.length>=4)return;
+  code+=k;paint();
+  if(code.length===4)setTimeout(check,180);
+}
+function check(){
+  if(code===PASS){unlock()}
+  else{
+    var d=document.getElementById('dots');d.classList.add('shake');
+    document.getElementById('hint').textContent='Yanlış şifre, tekrar dene 💭';
+    if(navigator.vibrate)navigator.vibrate(200);
+    setTimeout(function(){d.classList.remove('shake');code='';paint()},500);
+  }
+}
+document.addEventListener('keydown',function(e){
+  if(document.getElementById('lock').classList.contains('off'))return;
+  if(/^[0-9]$/.test(e.key))press(e.key);else if(e.key==='Backspace')press('⌫');
+});
+
+/* fotoğrafları oluştur */
+(function(){
+  var box=document.getElementById('photos');
+  PHOTOS.forEach(function(p){
+    var f=document.createElement('div');f.className='ph rv';
+    var img=new Image();img.src=p.src;img.alt=p.cap;
+    img.onerror=function(){
+      var n=document.createElement('div');n.className='no';
+      n.innerHTML='<span style="font-size:2.4rem">📷</span><span>'+p.src+' buraya</span>';
+      img.replaceWith(n);
+    };
+    f.appendChild(img);
+    var c=document.createElement('p');c.textContent=p.cap;f.appendChild(c);
+    f.onclick=function(){
+      if(!img.parentNode||img.complete&&!img.naturalWidth)return;
+      document.getElementById('lbi').src=p.src;
+      document.getElementById('lbc').textContent=p.cap;
+      document.getElementById('lb').classList.add('on');
+    };
+    box.appendChild(f);
+  });
+})();
+
+/* şarkı bölümü */
+(function(){
+  document.getElementById('lyr').textContent=SONG_LYRICS.trim();
+  var a=document.getElementById('aud'),pb=document.getElementById('play');
+  if(SONG_FILE){
+    a.src=SONG_FILE;pb.style.display='inline-block';
+    pb.onclick=function(){
+      if(a.paused){a.play();pb.textContent='❚❚ Durdur'}else{a.pause();pb.textContent='▶ Çal'}
+    };
+  }
+  if(SONG_LINK){var l=document.getElementById('link');l.href=SONG_LINK;l.style.display='inline-block';l.style.marginLeft=SONG_FILE?'10px':'0'}
+})();
+
+function unlock(){
+  var a0=document.getElementById('aud');
+  if(SONG_FILE){a0.play().then(function(){a0.pause();a0.currentTime=0}).catch(function(){})}
+  document.getElementById('lock').classList.add('off');
+  document.getElementById('main').style.display='block';
+  window.scrollTo(0,0);burst();
+  setTimeout(function(){document.getElementById('lock').style.display='none'},900);
+  setInterval(heart,900);watch();
+}
+function heart(){
+  var h=document.createElement('div');h.className='h';
+  h.textContent=['💗','💖','💕','🌸','♥'][Math.floor(Math.random()*5)];
+  h.style.left=Math.random()*100+'vw';h.style.fontSize=(14+Math.random()*26)+'px';
+  h.style.animationDuration=(7+Math.random()*6)+'s';
+  document.getElementById('hearts').appendChild(h);
+  setTimeout(function(){h.remove()},13500);
+}
+function burst(){for(var i=0;i<18;i++)setTimeout(heart,i*90)}
+function watch(){
+  var au=document.getElementById('aud'),pb=document.getElementById('play');
+  new IntersectionObserver(function(es){
+    if(!SONG_FILE)return;
+    if(es[0].isIntersecting){au.play().then(function(){pb.textContent='❚❚ Durdur'}).catch(function(){})}
+    else{au.pause();pb.textContent='▶ Çal'}
+  },{threshold:.5}).observe(document.getElementById('s4'));
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.2});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+  var hero=document.getElementById('heroTxt');
+  window.addEventListener('scroll',function(){
+    var p=Math.min(window.scrollY/window.innerHeight,1);
+    hero.style.transform='scale('+(1-p*.25)+')';
+    hero.parentNode.style.opacity=1-p*.9;
+  },{passive:true});
+}
+function openLetter(){
+  document.getElementById('env').classList.add('open');
+  document.getElementById('letter').classList.add('show');
+  document.getElementById('tap').style.display='none';burst();
+}
+</script>
+</body>
+</html>
